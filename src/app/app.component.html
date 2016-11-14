@@ -1,0 +1,23 @@
+
+<div class="container-fluid">
+<h1 align="center" >
+  {{title}}
+</h1>
+
+<div class="spaces"></div>
+
+<label>Search Person:</label>
+<input type="text" class="sm-col-2" placeholder=" Enter Criteria" [(ngModel)]="searchBy"/>
+
+  <div class="spaces_50px"></div>
+
+  <div class="row">
+    <span *ngFor="let person of personList | filterPersonPipe:searchBy">
+
+      <span class="sm-col-4 personstyle">{{ person }}</span>
+      <img [src]="'/images/'+person+'.png'"/>
+    </span>
+  </div>
+</div>
+
+
